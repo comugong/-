@@ -62,8 +62,8 @@ class Solution {
 //JavaScript
 function solution(num1, num2) {
     var answer = 0;
-    answer = Math.floor(num1 / num2) //Math.floor(a / b)는 연산 결과가 내림 처리됨. -> 7 / 2 = 3, -7 / 2 = -4 음수에서는 내림 처리하면 한 칸 내려감
-    // answer = Math.trunc(num1 / num2) Math.trunc(a / b)는 연산 결과의 소수점을 버림. -> 7 / 2 = 3, -7 / 2 = -3 floor와 trunc의 차이를 알고 실수하지 않아야 한다.
+    answer = Math.floor(num1 / num2); //Math.floor(a / b)는 연산 결과가 내림 처리됨. -> 7 / 2 = 3, -7 / 2 = -4 음수에서는 내림 처리하면 한 칸 내려감
+    answer = Math.trunc(num1 / num2); //Math.trunc(a / b)는 연산 결과의 소수점을 버림. -> 7 / 2 = 3, -7 / 2 = -3 floor와 trunc의 차이를 알고 실수하지 않아야 한다.
     return answer;
 }
 
