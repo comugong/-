@@ -28,7 +28,7 @@ num1	num2	result
 
 int solution(int num1, int num2) {
     int answer = 0;
-    answer = (float)num1 / num2 * 1000;
+    answer = (float)num1 / num2 * 1000; //암시적 형변환 허용
     return answer;
 }
 
@@ -40,7 +40,7 @@ using namespace std;
 
 int solution(int num1, int num2) {
     int answer = 0;
-    answer = (float)num1 / num2 * 1000;
+    answer = (float)num1 / num2 * 1000; //암시적 형변환 허
     return answer;
 }
 
@@ -50,7 +50,7 @@ using System;
 public class Solution {
     public int solution(int num1, int num2) {
         int answer = 0;
-        answer = (int)((float)num1 / num2 * 1000); //C#은 C, C++과 다르게 실수 -> 정수의 암시적 형변환을 허용하지 않음. 명시적 형변환을 이렇게 해줘야 함.
+        answer = (int)((float)num1 / num2 * 1000); //실수 -> 정수의 암시적 형변환 미허용. 명시적 형변환 필요
         return answer;
     }
 }
@@ -59,7 +59,7 @@ public class Solution {
 class Solution {
     public int solution(int num1, int num2) {
         int answer = 0;
-        answer = (int)((float)num1 / num2 * 1000); //Java는 C, C++과 다르게 실수 -> 정수의 암시적 형변환을 허용하지 않음. 명시적 형변환을 이렇게 해줘야 함.
+        answer = (int)((float)num1 / num2 * 1000); //실수 -> 정수의 암시적 형변환 미허용. 명시적 형변환 필요
         return answer;
     }
 }
@@ -68,11 +68,11 @@ class Solution {
 function solution(num1, num2) {
     var answer = 0;
     answer = num1 / num2 * 1000;
-    return Math.floor(answer); //JavaScript에서 숫자는 int, float, double과 같이 여러 자료형으로 나누어지지 않고 전부 number 타입이다. 소수점을 버리기 위해서 Math.floor() 사용. 범위가 음수를 포함한다면, Math.trunc() 사용. 
+    return Math.floor(answer); //JavaScript의 숫자는 모두 number 타입, 정수 부분을 반환할 때 Math.trunc()사용, 범위가 양수이므로 Math.floor()를 써도 같은 효과
 }
 
 //Python3
 def solution(num1, num2):
     answer = 0
-    answer = int(num1 / num2 * 1000)
+    answer = int(num1 / num2 * 1000) //int() 함수는 소수점을 버림
     return answer
