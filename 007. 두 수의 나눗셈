@@ -1,0 +1,78 @@
+문제 설명
+정수 num1과 num2가 매개변수로 주어질 때, num1을 num2로 나눈 값에 1,000을 곱한 후 정수 부분을 return 하도록 solution 함수를 완성해주세요.
+
+제한사항
+● 0 < num1 ≤ 100
+● 0 < num2 ≤ 100
+
+입출력 예
+num1	num2	result
+3	    2	    1500
+7	    3	    2333
+1	    16	  62
+
+입출력 예 설명
+입출력 예 #1
+● num1이 3, num2가 2이므로 3 / 2 = 1.5에 1,000을 곱하면 1500이 됩니다.
+
+입출력 예 #2
+● num1이 7, num2가 3이므로 7 / 3 = 2.33333...에 1,000을 곱하면 2333.3333.... 이 되며, 정수 부분은 2333입니다.
+
+입출력 예 #3
+● num1이 1, num2가 16이므로 1 / 16 = 0.0625에 1,000을 곱하면 62.5가 되며, 정수 부분은 62입니다.
+
+//C
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int solution(int num1, int num2) {
+    int answer = 0;
+    answer = (float)num1 / num2 * 1000;
+    return answer;
+}
+
+//C++
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int num1, int num2) {
+    int answer = 0;
+    answer = (float)num1 / num2 * 1000;
+    return answer;
+}
+
+//C#
+using System;
+
+public class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        answer = (int)((float)num1 / num2 * 1000); //C#은 C, C++과 다르게 실수 -> 정수의 암시적 형변환을 허용하지 않음. 명시적 형변환을 이렇게 해줘야 함.
+        return answer;
+    }
+}
+
+//Java
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = 0;
+        answer = (int)((float)num1 / num2 * 1000); //Java는 C, C++과 다르게 실수 -> 정수의 암시적 형변환을 허용하지 않음. 명시적 형변환을 이렇게 해줘야 함.
+        return answer;
+    }
+}
+
+//JavaScript
+function solution(num1, num2) {
+    var answer = 0;
+    answer = num1 / num2 * 1000;
+    return Math.floor(answer); //JavaScript에서 숫자는 int, float, double과 같이 여러 자료형으로 나누어지지 않고 전부 number 타입이다. 소수점을 버리기 위해서 Math.floor() 사용. 범위가 음수를 포함한다면, Math.trunc() 사용. 
+}
+
+//Python3
+def solution(num1, num2):
+    answer = 0
+    answer = int(num1 / num2 * 1000)
+    return answer
