@@ -10,7 +10,6 @@ num1	num2	result
 2	    3	    -1
 100	    2	    98
 
-답변
 //C
 #include <stdio.h>
 #include <stdbool.h>
