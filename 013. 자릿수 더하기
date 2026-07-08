@@ -9,3 +9,67 @@
 N	  answer
 123	  6
 987	  24
+
+//C
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <math.h>
+
+int solution(int n) {
+    int answer = 0;
+    while(n != 0) { //1의 자리부터 더함
+        answer += n % 10;
+        n /= 10;
+    }
+    return answer;
+}
+
+//C++
+#include <iostream>
+
+using namespace std;
+int solution(int n) {
+    int answer = 0;
+    while(n != 0) { //1의 자리부터 더함
+        answer += n % 10;
+        n /= 10;
+    }
+    return answer;
+}
+
+//C#
+using System;
+
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        while (n != 0) {
+            answer += n % 10;
+            n /= 10;
+        }
+        return answer;
+    }
+}
+
+//Java
+import java.util.*;
+
+public class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        while (n != 0) {
+            answer += n % 10;
+            n /= 10;
+        }
+        return answer;
+    }
+}
+
+//Python3
+def solution(n):
+    answer = 0
+    while(n != 0):
+        answer += n % 10
+        n //= 10
+    return answer
