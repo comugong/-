@@ -8,3 +8,60 @@
 n	  result
 10	  3
 12	  11
+
+//C
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+int solution(int n) {
+    int i = 2;
+    while (true) {
+        if (n % i == 1) return i;
+        ++i;
+    }
+}
+
+//C++
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n) {
+    int i = 2;
+    while (true) {
+        if (n % i == 1) return i;
+        ++i;
+    }
+}
+
+//C#
+using System;
+
+public class Solution {
+    public int solution(int n) {
+        int i = 2;
+        while (true) {
+            if (n % i == 1) return i;
+            ++i;
+        }
+    }
+}
+
+//Java
+class Solution {
+    public int solution(int n) {
+        int i = 2;
+        while (true) {
+            if (n % i == 1) return i;
+            ++i;
+        }
+    }
+}
+
+//Python3
+def solution(n):
+    for i in range(2, n):
+        if n % i == 1:
+            return i
