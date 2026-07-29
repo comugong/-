@@ -6,10 +6,10 @@
 
 입출력 예
 x	  return
-10	true
-12	true
-11	false
-13	false
+10	    true
+12	    true
+11	    false
+13	    false
 
 //C
 #include <stdio.h>
