@@ -16,3 +16,83 @@ n	    result
 6	    8
 16	    4
 626331	-1
+
+//C
+int solution(int num) {
+    long long n = num;
+    int count = 0;
+    while (n != 1) {
+        if (n % 2 == 0) n /= 2;
+        else n = n * 3 + 1;
+        ++count;
+        
+        if (count > 500) return -1;
+    }
+    
+    return count;
+}
+
+//C++
+int solution(int num) {
+    long long n = num;
+    int count = 0;
+    while (n != 1) {
+        if (n % 2 == 0) n /= 2;
+        else n = n * 3 + 1;
+        ++count;
+        
+        if (count > 500) return -1;
+    }
+    
+    return count;
+}
+
+//C#
+public class Solution {
+    public int solution(int num) {
+        long n = num;
+        int count = 0;
+        while (n != 1) {
+            if (n % 2 == 0) n /= 2;
+            else n = n * 3 + 1;
+            ++count;
+        
+            if (count > 500) return -1;
+        }
+    
+        return count;
+    }
+}
+
+//Java
+class Solution {
+    public int solution(int num) {
+        long n = num;
+        int count = 0;
+        while (n != 1) {
+            if (n % 2 == 0) n /= 2;
+            else n = n * 3 + 1;
+            ++count;
+        
+            if (count > 500) return -1;
+        }
+    
+        return count;
+    }
+}
+
+//Python3
+def solution(num):
+    count = 0
+    while num != 1:
+        if num %2 == 0:
+            num //= 2
+        else:
+            num = num * 3 + 1
+        
+        count += 1
+        
+        if count > 500:
+            return -1
+    
+    return count
