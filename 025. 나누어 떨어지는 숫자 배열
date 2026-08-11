@@ -33,3 +33,62 @@ vector<int> solution(vector<int> arr, int divisor) {
     
     return answer;
 }
+
+//C#
+using System.Collections.Generic;
+
+public class Solution {
+    public int[] solution(int[] arr, int divisor) {
+        List<int> answer = new List<int>();
+        
+        for (int i = 0; i < arr.Length; ++i) {
+            if (arr[i] % divisor == 0) answer.Add(arr[i]);
+        }
+        
+        if (answer.Count <= 0) answer.Add(-1);
+        
+        answer.Sort();
+        
+        return answer.ToArray();
+    }
+}
+
+//Java
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Solution {
+    public int[] solution(int[] arr, int divisor) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        
+        for (int i = 0; i < arr.length; ++i) {
+            if (arr[i] % divisor == 0) answer.add(arr[i]);
+        }
+        
+        if (answer.isEmpty()) answer.add(-1);
+        
+        int[] newAnswer = new int[answer.size()];
+        for (int i = 0; i < answer.size(); ++i) {
+            newAnswer[i] = answer.get(i);
+        }
+        
+        Arrays.sort(newAnswer);
+        
+        return newAnswer;
+    }
+}
+
+//Python3
+def solution(arr, divisor):
+    answer = []
+    
+    for i in range(len(arr)):
+        if arr[i] % divisor == 0:
+            answer.append(arr[i])
+            
+    if len(answer) == 0:
+        answer.append(-1)
+        
+    answer.sort()
+    
+    return answer
