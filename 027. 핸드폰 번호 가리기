@@ -1,0 +1,80 @@
+문제 설명
+전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.
+
+제한 조건
+● phone_number는 길이 4 이상, 20이하인 문자열입니다.
+
+입출력 예
+phone_number	  return
+"01033334444"	  "*******4444"
+"027778888"	    "*****8888"
+
+//C
+#include <stdlib.h>
+#include <string.h>
+
+char* solution(const char* phone_number) {
+    int size = strlen(phone_number);
+    char* answer = malloc(size + 1);
+    
+    for (int i = size - 1; i >= 0; --i) {
+        if (i >= size - 4) answer[i] = phone_number[i];
+        else answer[i] = '*';
+    }
+    
+    answer[size] = '\0';
+    
+    return answer;
+}
+
+//C++
+#include <string>
+
+using namespace std;
+
+string solution(string phone_number) {
+    for (auto it = phone_number.rbegin(); it != phone_number.rend(); ++it) {
+        if (it - phone_number.rbegin() >= 4) *it = '*';
+    }
+    
+    return phone_number;
+}
+
+//C#
+public class Solution {
+    public string solution(string phone_number) {
+        char[] answer = phone_number.ToCharArray();
+
+        for (int i = 0; i < answer.Length - 4; ++i) {
+            answer[i] = '*';
+        }
+
+        return new string(answer);
+    }
+}
+
+//Java
+class Solution {
+    public String solution(String phone_number) {
+        StringBuilder answer = new StringBuilder(phone_number);
+
+        for (int i = 0; i < answer.length() - 4; ++i) {
+            answer.setCharAt(i, '*');
+        }
+
+        return answer.toString();
+    }
+}
+
+//Python3
+def solution(phone_number):
+    answer = list(phone_number)
+    count = 0
+
+    for i in range(len(answer) - 1, -1, -1):
+        if count >= 4:
+            answer[i] = '*'
+
+        count += 1
+
+    return ''.join(answer)
