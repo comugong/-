@@ -6,6 +6,89 @@
 ● s는 길이가 1 이상, 100이하인 스트링입니다.
 
 입출력 예
-s	        return
+s	          return
 "abcde"	  "c"
 "qwer"	  "we"
+
+//C
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* solution(const char* s) {
+    int size = strlen(s);
+    int index = size / 2;
+    
+    char* result = (char*)malloc(3);
+     if (size % 2 == 0) {
+        result[0] = s[index - 1];
+        result[1] = s[index];
+        result[2] = '\0';
+    }
+    else {
+        result[0] = s[index];
+        result[1] = '\0';
+    }
+    
+    return result;
+}
+
+//C++
+#include <string>
+
+using namespace std;
+
+string solution(string s) {
+    string result = "";
+    int size = s.size();
+    int index = size/2;
+    if (size % 2 == 0) {
+        result.push_back(s[index - 1]);
+    }
+    result.push_back(s[index]);
+    
+    return result;
+}
+
+//C#
+using System;
+
+public class Solution {
+    public string solution(string s) {
+        string result = "";
+        int size = s.Length;
+        int index = size / 2;
+        
+        if (size % 2 == 0) {
+            result += s[index - 1];
+        }
+        result += s[index];
+        
+        return result;
+    }
+}
+
+//Java
+class Solution {
+    public String solution(String s) {
+        String result = "";
+        int size = s.length();
+        int index = size / 2;
+        
+        if (size % 2 == 0) {
+            result += s.charAt(index - 1);
+        }
+        result += s. charAt(index);
+        
+        return result;
+    }
+}
+
+//Python3
+def solution(s):
+    index = len(s) // 2
+    
+    if len(s) % 2 == 0:
+        return s[index - 1:index + 1]
+    
+    return s[index]
