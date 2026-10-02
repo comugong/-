@@ -10,6 +10,113 @@
 
 입출력 예
     t	            p	      result
-"3141592"	      "271"	      2
-"500220839878"	"7"	        8
-"10203"	        "15"	      3
+"3141592"	      "271"	        2
+"500220839878"	   "7"	        8
+"10203"	          "15"	        3
+
+//C
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+int solution(const char* t, const char* p) {
+    int result = 0;
+    int tLen = strlen(t);
+    int pLen = strlen(p);
+
+    for (int i = 0; i <= tLen - pLen; ++i) {
+        char s[20];
+
+        for (int j = 0; j < pLen; ++j) {
+            s[j] = t[i + j];
+        }
+
+        s[pLen] = '\0';
+
+        if (atoll(s) <= atoll(p)) {
+            result++;
+        }
+    }
+
+    return result;
+}
+
+//C++
+#include <string>
+
+using namespace std;
+
+int solution(string t, string p) {
+    int result = 0;
+    
+    for (int i = 0; i <= (int)t.size() - (int)p.size(); ++i) {
+        string s = "";
+        
+        for (int j = 0; j < (int)p.size(); ++j){
+            s.push_back(t[i + j]);
+        }
+        
+        if (stoll(s) <= stoll(p)) {
+            result++;
+        }
+    }
+    
+    return result;
+}
+
+//C#
+public class Solution {
+    public int solution(string t, string p) {
+        int result = 0;
+
+        for (int i = 0; i <= t.Length - p.Length; ++i) {
+            string s = "";
+
+            for (int j = 0; j < p.Length; ++j) {
+                s += t[i + j];
+            }
+
+            if (long.Parse(s) <= long.Parse(p)) {
+                result++;
+            }
+        }
+
+        return result;
+    }
+}
+
+//Java
+class Solution {
+    public int solution(String t, String p) {
+        int result = 0;
+
+        for (int i = 0; i <= t.length() - p.length(); ++i) {
+            String s = "";
+
+            for (int j = 0; j < p.length(); ++j) {
+                s += t.charAt(i + j);
+            }
+
+            if (Long.parseLong(s) <= Long.parseLong(p)) {
+                result++;
+            }
+        }
+
+        return result;
+    }
+}
+
+//Python3
+def solution(t, p):
+    result = 0
+
+    for i in range(len(t) - len(p) + 1):
+        s = ""
+
+        for j in range(len(p)):
+            s += t[i + j]
+
+        if int(s) <= int(p):
+            result += 1
+
+    return result
