@@ -29,3 +29,107 @@
 [[60, 50], [30, 70], [60, 30], [80, 40]]	      4000
 [[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]	  120
 [[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]	  133
+
+//C
+#include <stdio.h>
+
+int solution(int** sizes, size_t sizes_rows, size_t sizes_cols) {
+    int w = 0, h = 0;
+    
+    for (size_t i = 0; i < sizes_rows; ++i) {
+        int wSize = sizes[i][0] > sizes[i][1] ? sizes[i][0] : sizes[i][1];
+        int hSize = sizes[i][0] < sizes[i][1] ? sizes[i][0] : sizes[i][1];
+        
+        if (wSize > w) {
+            w = wSize;
+        }
+        if (hSize > h) {
+            h = hSize;
+        }
+    }
+    
+    return w * h;
+}
+
+//C++
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int solution(vector<vector<int>> sizes) {
+    int w = 0, h = 0;
+    
+    for (const vector<int>& size : sizes) {
+        int wSize = max(size[0], size[1]);
+        int hSize = min(size[0], size[1]);
+        
+        if (wSize > w) {
+            w = wSize;
+        }
+        if (hSize > h) {
+            h = hSize;
+        }
+    }
+    
+    return w * h;
+}
+
+//C#
+using System;
+
+public class Solution {
+    public int solution(int[,] sizes) {
+        int w = 0, h = 0;
+        
+        for (int i = 0; i < sizes.GetLength(0); ++i) {
+            int wSize = Math.Max(sizes[i, 0], sizes[i, 1]);
+            int hSize = Math.Min(sizes[i, 0], sizes[i, 1]);
+            
+            if (wSize > w) {
+                w = wSize;
+            }
+            if (hSize > h) {
+                h = hSize;
+            }
+        }
+        
+        return w * h;
+    }
+}
+
+//Java
+class Solution {
+    public int solution(int[][] sizes) {
+        int w = 0, h = 0;
+        
+        for (int i = 0; i < sizes.length; ++i) {
+            int wSize = Math.max(sizes[i][0], sizes[i][1]);
+            int hSize = Math.min(sizes[i][0], sizes[i][1]);
+            
+            if (wSize > w) {
+                w = wSize;
+            }
+            if (hSize > h) {
+                h = hSize;
+            }
+        }
+        
+        return w * h;
+    }
+}
+
+//Python3
+def solution(sizes):
+    w, h = 0, 0
+    
+    for size in sizes:
+        wSize = max(size[0], size[1])
+        hSize = min(size[0], size[1])
+        
+        if wSize > w:
+            w = wSize
+        if hSize > h:
+            h = hSize
+            
+    return w * h
